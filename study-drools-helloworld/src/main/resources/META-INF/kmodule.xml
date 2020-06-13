@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <kbase name="rules" packages="com.sample.rules">
+        <ksession name="ksession-rules"/>
+    </kbase>
+    <kbase name="dtables" packages="com.sample.dtables">
+        <ksession name="ksession-dtables"/>
+    </kbase>
+    <kbase name="process" packages="com.sample.process">
+        <ksession name="ksession-process"/>
+    </kbase>
+    
+    <!-- 
+        name: 指定kbase的名称;
+        packages: 执行规则文件的目录，需要根据实际情况填写，否则无法加载到规则文件
+        default: 指定当前kbase是否为默认
+     -->
+    <kbase name="buybook" packages="com.wez.drools.rules.buybook" default="true">
+        <!-- 
+            name: 指定ksession名称，可以任意，但是需要唯一;
+            default: 指定当前session是否为默认
+         -->
+        <ksession name="ksession-buybook" default="true" />
+    </kbase>
+    
+    <kbase name="carbon-copy-role" packages="com.wez.drools.rules.carboncopy">
+        <ksession name="ksession-carbon-copy-role"/>
+    </kbase>
+</kmodule>

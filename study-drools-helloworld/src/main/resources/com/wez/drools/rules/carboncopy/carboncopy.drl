@@ -1,0 +1,31 @@
+package com.wez.drools.rules.carboncopy
+
+import com.wez.drools.carboncopy.entity.CarbonCopyRole
+import com.wez.drools.carboncopy.svc.CarbonCopyService
+
+// 郑州抄送规则
+rule "郑州"
+    when
+        $role: CarbonCopyRole(projectName == "郑州")
+    then
+        System.out.println("郑州项目抄送的角色是" + $role.getRoleNames());
+        new CarbonCopyService().carbonCopy($role.getRoleNames());
+end
+
+// 山西抄送规则
+rule "山西"
+    when
+        $role: CarbonCopyRole(projectName == "山西")
+    then
+        System.out.println("山西项目抄送的角色是" + $role.getRoleNames());
+        new CarbonCopyService().carbonCopy($role.getRoleNames());
+end
+
+// 红河抄送规则
+rule "红河"
+    when
+        $role: CarbonCopyRole(projectName == "红河")
+    then
+        System.out.println("红河项目抄送的角色是" + $role.getRoleNames());
+        new CarbonCopyService().carbonCopy($role.getRoleNames());
+end
